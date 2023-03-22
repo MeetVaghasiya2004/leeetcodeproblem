@@ -1,0 +1,39 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+class B;
+class A{
+    private:
+    int a;
+    public:
+    void set(int i){
+        a=i;
+    }
+    friend void max(A,B);
+};
+class B{
+    private:
+    int b;
+    public:
+    void set(int i){
+        b=i;
+    }
+    friend void max(A,B);
+};
+void max(A x , B y)
+{
+    if(x.a >= y.b){
+        cout<<x.a;
+    }
+    else{
+        cout<<y.b;
+    }
+}
+int main() {
+    A a;
+    B b;
+    a.set(10);
+    b.set(20);
+    max(a,b);
+    return 0;
+}
